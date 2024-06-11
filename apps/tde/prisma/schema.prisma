@@ -23,7 +23,7 @@ model User {
 
 model DbCompany {
   address     String?
-  company     String?
+  company     String
   createdAt   DateTime     @default(now())
   dbEmployees DbEmployee[]
   email       String?
@@ -38,7 +38,7 @@ model DbEmployee {
   company       String?
   createdAt     DateTime    @default(now())
   id            String      @id @default(cuid())
-  name          String?
+  name          String
   sbEmployees   SbEmployee? @relation(fields: [sbEmployeesId], references: [id])
   sbEmployeesId String?     @unique
   updatedAt     DateTime    @updatedAt
@@ -92,7 +92,7 @@ model SbProvider {
 
 model SbVehicle {
   createdAt    DateTime                  @default(now())
-  driver       String?
+  driver       String
   driverPhoto  Json?
   email        String?
   id           String                    @id @default(cuid())

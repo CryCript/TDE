@@ -30,15 +30,12 @@ class DbCompanyCreateInput {
   address?: string | null;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  company?: string | null;
+  @Field(() => String)
+  company!: string;
 
   @ApiProperty({
     required: false,
@@ -75,7 +72,7 @@ class DbCompanyCreateInput {
   telp?: string | null;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: () => UserCreateNestedManyWithoutDbCompaniesInput,
   })
   @ValidateNested()

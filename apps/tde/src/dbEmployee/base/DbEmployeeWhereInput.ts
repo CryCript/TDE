@@ -15,7 +15,6 @@ import { DbCompanyWhereUniqueInput } from "../../dbCompany/base/DbCompanyWhereUn
 import { ValidateNested, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
 import { StringFilter } from "../../util/StringFilter";
-import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { SbEmployeeWhereUniqueInput } from "../../sbEmployee/base/SbEmployeeWhereUniqueInput";
 
 @InputType()
@@ -45,14 +44,14 @@ class DbEmployeeWhereInput {
 
   @ApiProperty({
     required: false,
-    type: StringNullableFilter,
+    type: StringFilter,
   })
-  @Type(() => StringNullableFilter)
+  @Type(() => StringFilter)
   @IsOptional()
-  @Field(() => StringNullableFilter, {
+  @Field(() => StringFilter, {
     nullable: true,
   })
-  name?: StringNullableFilter;
+  name?: StringFilter;
 
   @ApiProperty({
     required: false,

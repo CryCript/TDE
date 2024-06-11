@@ -25,15 +25,12 @@ import { EnumSbVehicleVehicleType } from "./EnumSbVehicleVehicleType";
 @InputType()
 class SbVehicleCreateInput {
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  driver?: string | null;
+  @Field(() => String)
+  driver!: string;
 
   @ApiProperty({
     required: false,

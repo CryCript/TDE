@@ -38,7 +38,7 @@ class DbCompanyUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  company?: string | null;
+  company?: string;
 
   @ApiProperty({
     required: false,

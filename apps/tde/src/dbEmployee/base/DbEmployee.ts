@@ -44,15 +44,12 @@ class DbEmployee {
   id!: string;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  name!: string | null;
+  @Field(() => String)
+  name!: string;
 
   @ApiProperty({
     required: false,

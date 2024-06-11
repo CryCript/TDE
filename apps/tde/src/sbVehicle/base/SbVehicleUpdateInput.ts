@@ -33,7 +33,7 @@ class SbVehicleUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  driver?: string | null;
+  driver?: string;
 
   @ApiProperty({
     required: false,

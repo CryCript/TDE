@@ -14,8 +14,8 @@ import { ApiProperty } from "@nestjs/swagger";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
-import { DbEmployeeListRelationFilter } from "../../dbEmployee/base/DbEmployeeListRelationFilter";
 import { StringFilter } from "../../util/StringFilter";
+import { DbEmployeeListRelationFilter } from "../../dbEmployee/base/DbEmployeeListRelationFilter";
 import { UserListRelationFilter } from "../../user/base/UserListRelationFilter";
 
 @InputType()
@@ -33,14 +33,14 @@ class DbCompanyWhereInput {
 
   @ApiProperty({
     required: false,
-    type: StringNullableFilter,
+    type: StringFilter,
   })
-  @Type(() => StringNullableFilter)
+  @Type(() => StringFilter)
   @IsOptional()
-  @Field(() => StringNullableFilter, {
+  @Field(() => StringFilter, {
     nullable: true,
   })
-  company?: StringNullableFilter;
+  company?: StringFilter;
 
   @ApiProperty({
     required: false,
